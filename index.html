@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>My Port-Folio Website</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='./CSS/main.css'>
+
+    <!-- INTERNAL CSS  -->
+    <style>
+        /* KEEPING FONT-SIZE FOR ALL TAGS SAME TO BE ABLE TO CHANGE THEM TOGETHER */
+        .navbar a, .about, .skills, .skills-h1 .news-input, .news-input input, #news-table td, 
+        #submit, .news-scroll, .changesize-btn,  
+        .links a, .changecolor-btn{
+            font-size: 27px;
+        }
+        /* KEEPING FONT-SIZE FOR ALL TAGS SAME TO BE ABLE TO CHANGE THEM TOGETHER */
+
+
+        /* LINKS */
+        .links a {
+            margin-top: 100px;
+            border-radius: 17px;
+            font-weight: bold;
+            text-align: center;
+            background-color:aqua;
+            color:darkred;
+            padding:20px;
+            width:350px;
+            height: 100px;
+        }
+        /* LINKS */
+
+    </style>
+    <!-- INTERNAL CSS  -->
+
+
+</head>
+
+
+<body id="mbody" >
+    <div class="navbar" id="navbar-href">
+        <div class="item"><a href="#navbar-href" class="text">HOME</a></div>
+        <div class="item"><a href="#about-href" class="text">ABOUT ME</a></div>
+        <div class="item"><a href="#skills-href" class="text">SKILLS</a></div>
+        <div class="item"><a href="#news-href" class="text">NEWS & UPDATES</a></div>
+        <div class="item"><a href="#contact-me" class="text">CONTACT ME</a></div>
+    </div>
+    <div class="profile">
+        <div class="profile-text">
+        <!-- HEIGHT DOESN'T CHANGE FOR THIS-->
+        <h1>Hello</h1>
+        <h2>I AM MANOHAR NAGA</h2>
+        <h4>UG1-STUDENT AT IIIT-H</h4>
+        <!-- HEIGHT DOESN'T CHANGE FOR THIS-->
+        </div>
+        <img id="profile-img" src="./media/electric-min.png" alt="hey!">
+    </div>
+    <div class="about" id="about-href">
+        <table class="Table">
+            <caption class="about_me text">About Me</caption>
+            <tr>
+                <td class="about_header text" rowspan="7" >Education background</td>
+            </tr>
+            <tr>
+                <!-- INLINE CSS -->
+                <td style="font-weight:bold" class="text">Schooling: </td>
+            </tr>
+            <tr>
+                <td class="text">Telangana State Model School(TSMS), Armoor, Nizamabad</td>
+            </tr>
+            <tr>
+                <!-- INLINE CSS -->
+                <td style="font-weight:bold" class="text">Secondary Schooling: </td>
+            </tr>
+            <tr>
+                <td class="text">Pre-University Course(PUC) at Rajiv Gandhi University of Knowledge Technologies(RGUKT), Basar</td>
+            </tr>
+            <tr>
+                <!-- INLINE CSS -->
+                <td style="font-weight:bold" class="text">College/Unversity(Present)</td>
+            </tr>
+            <tr>
+                <td class="text">Btech in CSE at IIIT-H(International Institute of Information Technology, Hyderabad)</td>
+            </tr>
+            <tr>
+                <td class="about_header text" rowspan="5">Achievements</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="text">1. Qualified and Secured a Certificate from ISKCON Bhagavadgita Exam</td>
+            </tr>
+            <tr>
+                <td class="text">2. Web Development Bootcamp Certification from SHAPEAI - 
+                 <a  style="text-decoration: none;" 
+                 href="https://github.com/manoharnaga/manohar_naga.github.io" class="text">(My GitRepo)</a></td>
+            </tr>
+            <tr>
+                <td class="text">3. District Level 1st Prize in Maths Forum Test of all Govt Schools</td>
+            </tr>
+        </table>
+    </div>
+    <div class="skills" id="skills-href">
+        <h1 class="skills-h1 text">Skills</h1>
+        <div class="skill-img">
+            <img class="skill-img-hover" src="./media/c_lang-min.png" alt="C_LANGUAGE"/>
+            <img class="skill-img-hover" src="./media/cpp_lang-min.png" alt="C PLUS PLUS"/>
+            <img class="skill-img-hover" src="./media/bash-min.jpg" alt="BASH scripting"/>
+            <img class="skill-img-hover" src="./media/web-min.png" alt="WEB Development"/>
+            <img class="skill-img-hover" src="./media/python-min.png" alt="PYTHON-LOGO"/>
+        </div>
+    </div>
+    <div class="changecolor">
+        <button class="changecolor-btn text" onclick="changecolor1()" >Blue</button>
+        <button class="changecolor-btn text" onclick="changecolor2()" >Green</button>
+        <button class="changecolor-btn text" onclick="changecolor3()" >Peru </button>
+        <button class="changecolor-btn text" onclick="changecolor4()" >Polo </button>
+        <button class="changecolor-btn text" onclick="changecolor5()" >Sand </button>
+    </div>
+    <div class="changesize">
+        <button class="changesize-btn text" onclick="changefontsize(19)" >19px</button>
+        <button class="changesize-btn text" onclick="changefontsize(27)" >27px</button>
+        <button class="changesize-btn text" onclick="changefontsize(117)" >117px</button>
+    </div>
+    <div class="news-input" id="news-href">
+            <h1 id="newsUpdateHead" style="text-align:center;" class="text">NEWS AND UPDATES</h1> <!--INLINE CSS -->
+            <br>
+            <marquee behavior="scroll" direction="up" height="250px">
+            <table id="news-table">
+
+            </table>
+            </marquee>
+        
+        <form name="newsUpdateForm" autocomplete="on" >
+            <table>
+                <tr>
+                    <td><label for="date" class="text">Date:</label></td>
+                    <td><input id="date-text" type="date" name="date" placeholder="dd-mm-yyyy" required></td>
+                </tr>
+                <tr>
+                    <td><label for="name" class="text">Name:</label></td>
+                    <td><input id="name-text" type="text" name="name" placeholder="Enter Your Name..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="update" class="text">News Update:</label></td>
+                    <td><input id="update-text" name="update" placeholder="Enter New Update.." required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="input-group text" type="button" id="submit" onclick="updateRow()">SUBMIT</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="links">
+        <!-- INLINE CSS -->
+        <a style="text-decoration: none;" href="https://www.youtube.com/watch?v=4pFUP0HZwWM&t=197s" class="text"> External Link</a>
+        <a style="text-decoration: none;" href="./.iss_sample/Pointinside/" class="text">Internal Link</a> 
+                <!-- TWO FOLDERS UP FROM WHERE THE index.html is Present -->
+        <!-- INLINE CSS --> 
+    </div>
+    <footer>
+        <!--<div class="social_icons">
+            <a style="text-decoration: none;" href="https://www.linkedin.com/in/manohar-naga-a296a9220/" 
+            class="fa fa-linkedin"></a>
+            <a style="text-decoration: none;" href="https://twitter.com/manoharnaga333" 
+                class="fa fa-twitter"></a>
+            <a style="text-decoration: none;" href="mailto:manoharnaga333@gmail.com" 
+                class="fa fa-google"></a>
+        </div>-->
+        <h1 id="contact-me" class="text">Contact Me</h1>
+        <div class="social_handles">
+            <table>
+                <tr>
+                    <th class="text" >Company</th>
+                    <th class="text" >Other Links</th>
+                </tr>
+                <tr>
+                    <td class="text" >About</td>
+                    <td class="text" >Community</td>
+                </tr>
+                <tr>
+                    <td class="text" >Privacy Policy</td>
+                    <td class="text" >Clubs</td>
+                </tr>
+                <tr>
+                    <td class="text"  rowspan="3">Terms & Conditions</td>
+                    <td class="text" >Events</td>
+                </tr>
+                <tr>
+                    <td class="text" >Wall of Conduct</td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+    <p class="end_game text">© 2022, Manify Pvt. Ltd. All Rights Reserved.</p>
+    <script src='./JS/main.js'></script>
+</body>
+
+</html>
